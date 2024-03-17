@@ -15,10 +15,10 @@ const ProductSlider = ({ singleCategoryProducts }) => {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
   };
-  console.log(singleCategoryProducts);
+  console.log(singleCategoryProducts.category);
   return (
     <div>
-      <h3 className="text-lg my-2 lg:my-5 md:text-xl font-semibold lg:text-2xl">
+      <h3 className="text-lg mt-3 lg:mt-5 md:text-xl font-semibold lg:text-2xl">
         {singleCategoryProducts?.category}
       </h3>
       <Swiper
@@ -38,28 +38,48 @@ const ProductSlider = ({ singleCategoryProducts }) => {
         }}
         pagination={pagination}
         modules={[Pagination]}
-        className="mySwiper"
+        className="mySwiper my-5"
       >
         {singleCategoryProducts?.products?.map((product, idx) => (
-          <SwiperSlide className="select-none " key={product.images[0] + idx}>
+          <SwiperSlide
+            className="select-none border"
+            key={product.images[0] + idx}
+          >
             <div>
               <div>
                 <img
-                  className="duration-300 select-none max-xsm:!h-[180px] max-sm:!h-[280px] sm:!h-[300px]"
-                  //   src={product.images[0]}
-                  src="https://media.istockphoto.com/id/1419410282/photo/silent-forest-in-spring-with-beautiful-bright-sun-rays.jpg?s=612x612&w=is&k=20&c=nsTKLa7PIT5yT1YiPIucW5bT7AUxwno1X0ePG-3r_vY="
+                  className="duration-300 shadow-sm select-none max-xsm:!h-[180px] max-sm:!h-[280px] sm:!h-[300px]"
+                  src={product.images[0]}
                   alt={product.description}
                 />
               </div>
-              <div className="px-2">
-                <h3 className="text-xl font-medium">
-                  {product.title.split("").length > 20
-                    ? product.title.slice(0, 20) + "..."
-                    : product.title}
+              <div className="mt-2.5 space-y-2.5">
+                <h3 className="text-base sm:text-lg md:text-xl font-medium px-2 truncate">
+                  {product.title}
                 </h3>
-                {/* <h3 className="text-xl font-medium">{product.title}</h3> */}
-                <h3>{product["regular-price"]}</h3>
-                <Button>By Now</Button>
+                <p className="px-2 space-x-2 max-sm:text-sm">
+                  {product["discount-price"] && (
+                    <span className="text-primary-color font-semibold">
+                      TK {product["discount-price"]}
+                    </span>
+                  )}
+                  {product["regular-price"] && (
+                    <span
+                      className={`font-semibold ${
+                        product["discount-price"] &&
+                        "scale-50 line-through text-gray-500"
+                      }`}
+                    >
+                      TK {product["regular-price"]}
+                    </span>
+                  )}
+                </p>
+                <Button
+                  radius="none"
+                  className="w-full bg-primary-color text-white font-semibold"
+                >
+                  By Now
+                </Button>
               </div>
             </div>
           </SwiperSlide>

@@ -2,8 +2,8 @@ import ProductSlider from "../utils/ProductSlider";
 
 const ProductSection = () => {
   return (
-    <div className="border-2">
-      <h4 className="text-xl my-2 lg:my-5 md:text-2xl font-semibold lg:text-3xl capitalize">
+    <div className="">
+      <h4 className="text-xl mt-2 lg:mt-5 md:text-2xl font-semibold lg:text-3xl capitalize">
         Recommended for you
       </h4>
       <div>
@@ -131,8 +131,8 @@ const allCategoriesProducts = [
     products: [
       {
         title: "Men's Casual Shirt",
-        regularPrice: 1200,
-        discountPrice: 1000,
+        "regular-price": 1200,
+        "discount-price": 1000,
         images: ["https://i.ibb.co/XLZ5yjt/product1.jpg"],
         description: "Comfortable and stylish casual shirt for men.",
         availableQuantity: 150,
@@ -140,8 +140,8 @@ const allCategoriesProducts = [
       },
       {
         title: "Women's Denim Jeans",
-        regularPrice: 950,
-        discountPrice: 800,
+        "regular-price": 950,
+        "discount-price": 800,
         images: ["https://i.ibb.co/WpVvPD1/product2.jpg"],
         description: "Classic denim jeans designed for women.",
         availableQuantity: 120,
@@ -149,8 +149,8 @@ const allCategoriesProducts = [
       },
       {
         title: "Kids' Summer Dress",
-        regularPrice: 600,
-        discountPrice: null,
+        "regular-price": 600,
+        "discount-price": null,
         images: ["https://i.ibb.co/VjMjspZ/product3.jpg"],
         description: "Adorable summer dress for girls.",
         availableQuantity: 200,
@@ -158,8 +158,8 @@ const allCategoriesProducts = [
       },
       {
         title: "Men's Formal Suit",
-        regularPrice: 2500,
-        discountPrice: 2000,
+        "regular-price": 2500,
+        "discount-price": 2000,
         images: ["https://i.ibb.co/Cmv4vgc/product4.jpg"],
         description: "Elegant formal suit for men's occasions.",
         availableQuantity: 100,
@@ -172,8 +172,8 @@ const allCategoriesProducts = [
     products: [
       {
         title: "Stainless Steel Refrigerator",
-        regularPrice: 22000,
-        discountPrice: 20000,
+        "regular-price": 22000,
+        "discount-price": 20000,
         images: ["https://i.ibb.co/XLZ5yjt/product1.jpg"],
         description:
           "Large capacity refrigerator with energy-efficient cooling.",
@@ -182,8 +182,8 @@ const allCategoriesProducts = [
       },
       {
         title: "Automatic Coffee Maker",
-        regularPrice: 1800,
-        discountPrice: null,
+        "regular-price": 1800,
+        "discount-price": null,
         images: ["https://i.ibb.co/WpVvPD1/product2.jpg"],
         description:
           "Convenient coffee maker with programmable brewing options.",
@@ -192,8 +192,8 @@ const allCategoriesProducts = [
       },
       {
         title: "Robotic Vacuum Cleaner",
-        regularPrice: 3000,
-        discountPrice: null,
+        "regular-price": 3000,
+        "discount-price": null,
         images: ["https://i.ibb.co/VjMjspZ/product3.jpg"],
         description: "Smart vacuum cleaner that automatically cleans floors.",
         availableQuantity: 40,
@@ -201,8 +201,8 @@ const allCategoriesProducts = [
       },
       {
         title: "Air Purifier",
-        regularPrice: 1500,
-        discountPrice: 1200,
+        "regular-price": 1500,
+        "discount-price": 1200,
         images: ["https://i.ibb.co/Cmv4vgc/product4.jpg"],
         description: "High-efficiency air purifier for clean indoor air.",
         availableQuantity: 70,
@@ -215,8 +215,8 @@ const allCategoriesProducts = [
     products: [
       {
         title: "Treadmill",
-        regularPrice: 35000,
-        discountPrice: 30000,
+        "regular-price": 35000,
+        "discount-price": 30000,
         images: ["https://i.ibb.co/XLZ5yjt/product1.jpg"],
         description: "High-quality treadmill with various workout programs.",
         availableQuantity: 20,
@@ -224,8 +224,8 @@ const allCategoriesProducts = [
       },
       {
         title: "Yoga Mat",
-        regularPrice: 750,
-        discountPrice: null,
+        "regular-price": 750,
+        "discount-price": null,
         images: ["https://i.ibb.co/WpVvPD1/product2.jpg"],
         description: "Non-slip yoga mat for comfortable and safe practice.",
         availableQuantity: 100,
@@ -233,8 +233,8 @@ const allCategoriesProducts = [
       },
       {
         title: "Dumbbell Set",
-        regularPrice: 1200,
-        discountPrice: 1000,
+        "regular-price": 1200,
+        "discount-price": 1000,
         images: ["https://i.ibb.co/VjMjspZ/product3.jpg"],
         description: "Adjustable dumbbell set for strength training workouts.",
         availableQuantity: 60,
@@ -242,8 +242,8 @@ const allCategoriesProducts = [
       },
       {
         title: "Basketball",
-        regularPrice: 600,
-        discountPrice: null,
+        "regular-price": 600,
+        "discount-price": null,
         images: ["https://i.ibb.co/Cmv4vgc/product4.jpg"],
         description: "Official size basketball for indoor and outdoor play.",
         availableQuantity: 120,
@@ -256,8 +256,8 @@ const allCategoriesProducts = [
     products: [
       {
         title: "Anti-Aging Face Cream",
-        regularPrice: 1500,
-        discountPrice: 1200,
+        "regular-price": 1500,
+        "discount-price": 1200,
         images: ["https://i.ibb.co/XLZ5yjt/product1.jpg"],
         description: "Moisturizing face cream with anti-aging properties.",
         availableQuantity: 80,
@@ -265,8 +265,8 @@ const allCategoriesProducts = [
       },
       {
         title: "Hair Straightener",
-        regularPrice: 900,
-        discountPrice: 750,
+        "regular-price": 900,
+        "discount-price": 750,
         images: ["https://i.ibb.co/WpVvPD1/product2.jpg"],
         description: "Ceramic hair straightener for sleek and shiny hair.",
         availableQuantity: 60,
@@ -274,8 +274,8 @@ const allCategoriesProducts = [
       },
       {
         title: "Men's Grooming Kit",
-        regularPrice: 1200,
-        discountPrice: null,
+        "regular-price": 1200,
+        "discount-price": null,
         images: ["https://i.ibb.co/VjMjspZ/product3.jpg"],
         description:
           "Complete grooming kit for men including trimmer, shaver, and more.",
@@ -284,8 +284,8 @@ const allCategoriesProducts = [
       },
       {
         title: "Luxury Perfume",
-        regularPrice: 2500,
-        discountPrice: 2000,
+        "regular-price": 2500,
+        "discount-price": 2000,
         images: ["https://i.ibb.co/Cmv4vgc/product4.jpg"],
         description: "Exquisite fragrance for a luxurious scent experience.",
         availableQuantity: 90,
