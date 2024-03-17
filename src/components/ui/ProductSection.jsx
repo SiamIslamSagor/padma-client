@@ -10,9 +10,9 @@ const ProductSection = () => {
         {/* {products?.map((product, idx) => (
           <ProductSlider key={product?.title + idx} product={product} />
         ))} */}
-        {allCategoriesProducts?.map(singleCategoryProducts => (
+        {allCategoriesProducts?.map((singleCategoryProducts, idx) => (
           <ProductSlider
-            key={singleCategoryProducts.category}
+            key={singleCategoryProducts.category + idx}
             singleCategoryProducts={singleCategoryProducts}
           />
         ))}

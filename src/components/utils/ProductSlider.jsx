@@ -1,11 +1,9 @@
 import PropTypes from "prop-types";
-import { Pagination } from "swiper/modules";
-// Import Swiper React components
+import { Pagination, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import { Button } from "@nextui-org/react";
 
 const ProductSlider = ({ singleCategoryProducts }) => {
@@ -15,7 +13,6 @@ const ProductSlider = ({ singleCategoryProducts }) => {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
   };
-  console.log(singleCategoryProducts.category);
   return (
     <div>
       <h3 className="text-lg mt-3 lg:mt-5 md:text-xl font-semibold lg:text-2xl">
@@ -36,9 +33,12 @@ const ProductSlider = ({ singleCategoryProducts }) => {
             spaceBetween: 25,
           },
         }}
+        navigation={true}
         pagination={pagination}
-        modules={[Pagination]}
+        slidesPerGroup={4}
+        modules={[Pagination, Navigation]}
         className="mySwiper my-5"
+        key={singleCategoryProducts?.category + 5}
       >
         {singleCategoryProducts?.products?.map((product, idx) => (
           <SwiperSlide
