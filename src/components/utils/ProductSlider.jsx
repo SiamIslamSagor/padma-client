@@ -5,6 +5,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Button } from "@nextui-org/react";
+import { MdAdd } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 const ProductSlider = ({ singleCategoryProducts }) => {
   const pagination = {
@@ -42,46 +44,49 @@ const ProductSlider = ({ singleCategoryProducts }) => {
       >
         {singleCategoryProducts?.products?.map((product, idx) => (
           <SwiperSlide
-            className="select-none border"
+            className="select-none border "
             key={product.images[0] + idx}
           >
-            <div>
-              <div>
-                <img
-                  className="duration-300 shadow-sm select-none max-xsm:!h-[180px] max-sm:!h-[280px] sm:!h-[300px]"
-                  src={product.images[0]}
-                  alt={product.description}
-                />
+            <Link to={`/product-details/${product?.title}`}>
+              <div className="cursor-pointer active:scale-95 duration-500">
+                <div>
+                  <img
+                    className="duration-300 shadow-sm select-none max-xsm:!h-[180px] max-sm:!h-[280px] sm:!h-[300px]"
+                    src={product.images[0]}
+                    alt={product.description}
+                  />
+                </div>
+                <div className="mt-2.5 space-y-2.5">
+                  <h3 className="text-base sm:text-lg md:text-xl font-medium px-2 truncate">
+                    {product.title}
+                  </h3>
+                  <p className="px-2 space-x-2 max-sm:text-sm">
+                    {product["discount-price"] && (
+                      <span className="text-primary-color font-semibold">
+                        TK {product["discount-price"]}
+                      </span>
+                    )}
+                    {product["regular-price"] && (
+                      <span
+                        className={`font-semibold ${
+                          product["discount-price"] &&
+                          "scale-50 line-through text-gray-500"
+                        }`}
+                      >
+                        TK {product["regular-price"]}
+                      </span>
+                    )}
+                  </p>
+                  <Button
+                    radius="none"
+                    startContent={<MdAdd className="font-bold text-xl " />}
+                    className="w-full bg-primary-color text-white font-semibold"
+                  >
+                    <span className=" -ml-1.5">By Now</span>
+                  </Button>
+                </div>
               </div>
-              <div className="mt-2.5 space-y-2.5">
-                <h3 className="text-base sm:text-lg md:text-xl font-medium px-2 truncate">
-                  {product.title}
-                </h3>
-                <p className="px-2 space-x-2 max-sm:text-sm">
-                  {product["discount-price"] && (
-                    <span className="text-primary-color font-semibold">
-                      TK {product["discount-price"]}
-                    </span>
-                  )}
-                  {product["regular-price"] && (
-                    <span
-                      className={`font-semibold ${
-                        product["discount-price"] &&
-                        "scale-50 line-through text-gray-500"
-                      }`}
-                    >
-                      TK {product["regular-price"]}
-                    </span>
-                  )}
-                </p>
-                <Button
-                  radius="none"
-                  className="w-full bg-primary-color text-white font-semibold"
-                >
-                  By Now
-                </Button>
-              </div>
-            </div>
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>
