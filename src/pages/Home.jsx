@@ -1,4 +1,5 @@
 import HeroSection from "../components/ui/HeroSection";
+import ProductSection from "../components/ui/ProductSection";
 
 const Home = () => {
   return (
@@ -6,7 +7,9 @@ const Home = () => {
       <div>
         <HeroSection />
       </div>
-      <h1 className="text-4xl text-center font-bold">Home</h1>
+      <div>
+        <ProductSection />
+      </div>
     </div>
   );
 };

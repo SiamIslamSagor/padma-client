@@ -9,9 +9,6 @@ const HeroSlider = () => {
     <div className="w-full max-w-4xl mx-auto">
       <Swiper
         spaceBetween={30}
-        pagination={{
-          clickable: true,
-        }}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
