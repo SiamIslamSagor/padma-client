@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Wireless Bluetooth Earphones",
+    "regular-price": 850,
+    "discount-price": 750,
+    "images": ["https://i.ibb.co/XLZ5yjt/product1.jpg"],
+    "description": "High-quality wireless earphones with Bluetooth connectivity.",
+    "available-quantity": 100,
+    "isSold": false
+  },
+  {
+    "title": "Portable Power Bank",
+    "regular-price": 700,
+    "discount-price": 600,
+    "images": ["https://i.ibb.co/WpVvPD1/product2.jpg"],
+    "description": "Compact power bank with fast charging capability.",
+    "available-quantity": 80,
+    "isSold": false
+  },
+  {
+    "title": "Foldable Laptop Stand",
+    "regular-price": 550,
+    "discount-price": 500,
+    "images": ["https://i.ibb.co/VjMjspZ/product3.jpg"],
+    "description": "Adjustable and portable laptop stand for ergonomic usage.",
+    "available-quantity": 120,
+    "isSold": false
+  },
+  {
+    "title": "Waterproof DSLR Camera Backpack",
+    "regular-price": 1200,
+    "discount-price": 1000,
+    "images": ["https://i.ibb.co/Cmv4vgc/product4.jpg"],
+    "description": "Durable and waterproof backpack specifically designed for DSLR cameras.",
+    "available-quantity": 50,
+    "isSold": false
+  },
+  {
+    "title": "Smartphone Gimbal Stabilizer",
+    "regular-price": 1400,
+    "discount-price": 1200,
+    "images": ["https://i.ibb.co/XLZ5yjt/product1.jpg"],
+    "description": "3-axis smartphone gimbal stabilizer for smooth video recording.",
+    "available-quantity": 60,
+    "isSold": false
+  },
+  {
+    "title": "Bluetooth Speaker",
+    "regular-price": 950,
+    "discount-price": 850,
+    "images": ["https://i.ibb.co/WpVvPD1/product2.jpg"],
+    "description": "Portable Bluetooth speaker with high-quality sound output.",
+    "available-quantity": 90,
+    "isSold": false
+  },
+  {
+    "title": "Fitness Tracker Smartwatch",
+    "regular-price": 1800,
+    "discount-price": 1500,
+    "images": ["https://i.ibb.co/VjMjspZ/product3.jpg"],
+    "description": "Smartwatch with fitness tracking features including heart rate monitoring and step counting.",
+    "available-quantity": 40,
+    "isSold": false
+  },
+  {
+    "title": "Compact Digital Camera",
+    "regular-price": 1350,
+    "discount-price": 1200,
+    "images": ["https://i.ibb.co/Cmv4vgc/product4.jpg"],
+    "description": "High-quality digital camera with compact design and multiple shooting modes.",
+    "available-quantity": 70,
+    "isSold": false
+  },
+  {
+    "title": "Foldable Bluetooth Keyboard",
+    "regular-price": 750,
+    "discount-price": 650,
+    "images": ["https://i.ibb.co/XLZ5yjt/product1.jpg"],
+    "description": "Portable and foldable keyboard compatible with smartphones and tablets.",
+    "available-quantity": 110,
+    "isSold": false
+  },
+  {
+    "title": "Compact Binoculars",
+    "regular-price": 900,
+    "discount-price": 800,
+    "images": ["https://i.ibb.co/WpVvPD1/product2.jpg"],
+    "description": "Compact binoculars with high magnification power and lightweight design.",
+    "available-quantity": 85,
+    "isSold": false
+  }
+]
