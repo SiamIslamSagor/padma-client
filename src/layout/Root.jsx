@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../components/shared/Footer";
-import Navbar from "../components/shared/Navbar";
+import Navbar from "../components/ui/Navbar";
+import Footer from "../components/ui/Footer";
 
 const Root = () => {
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflowx-hidden">
       <Navbar />
       <Outlet></Outlet>
       <Footer />
