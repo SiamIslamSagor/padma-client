@@ -41,7 +41,7 @@ const ProductCheckout = () => {
                   <input
                     type="text"
                     placeholder="Md Rocky"
-                    autoFocus
+                    autoFocus={true}
                     className="border border-[#9B9B9B] mt-1 lg:mt-2 h-14 px-2 rounded-[4px] text-base lg:text-lg duration-300 w-full align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
                   />
                 </div>
@@ -76,7 +76,6 @@ const ProductCheckout = () => {
                   <input
                     type="text"
                     placeholder="019245*****"
-                    autoFocus
                     className="border border-[#9B9B9B] mt-1 lg:mt-2 h-14 px-2 rounded-[4px] text-base lg:text-lg duration-300 w-full align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
                   />
                 </div>

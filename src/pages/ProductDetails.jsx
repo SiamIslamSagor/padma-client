@@ -82,7 +82,7 @@ const ProductDetails = () => {
                   {singleProductDetails["availableQuantity"]}
                 </p>
                 <div className="max-lg:mx-auto max-w-[575px] lg:pt-28 space-y-3 xsm:space-y-4 md:space-y-5">
-                  <ButtonGroup radius="none">
+                  <ButtonGroup radius="none" className="pb-5">
                     <Button
                       onClick={() =>
                         productQuantity === 1
