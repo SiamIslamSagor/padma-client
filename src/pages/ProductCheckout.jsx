@@ -24,9 +24,9 @@ const ProductCheckout = () => {
   }, [params?.id, axiosPublic]);
   return (
     <div className="container max-w-[1175px] mx-auto max-xl:px-5 ">
-      <div className="my-24 border-2">
-        <div className=" m-2  rounded-[4px]">
-          <div className="max-w-[575px] w-full border p-6">
+      <div className="my-24 max-lg:space-y-10 lg:flex ">
+        <div className="m-2 rounded-[4px]">
+          <div className="max-w-[575px] mx-auto w-full border p-6">
             <form>
               <div className="max-xsm:space-y-2 max-sm:space-y-4 sm:space-y-6 duration-300">
                 <h4 className="text-xl lg:text-2xl font-semibold">
@@ -42,7 +42,7 @@ const ProductCheckout = () => {
                     type="text"
                     placeholder="Md Rocky"
                     autoFocus
-                    className="border mt-1 lg:mt-2 h-14 px-2 rounded-[4px] text-base lg:text-lg duration-300 w-full align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
+                    className="border border-[#9B9B9B] mt-1 lg:mt-2 h-14 px-2 rounded-[4px] text-base lg:text-lg duration-300 w-full align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
                   />
                 </div>
                 <div className="w-full flex flex-col">
@@ -52,37 +52,16 @@ const ProductCheckout = () => {
                     </span>
                   </label>
                   <textarea
-                    className="mt-1 lg:mt-2 py-3 px-4 block w-full border rounded-[4px] resize-none 
+                    className="mt-1 lg:mt-2 py-3 px-4 block w-full border border-[#9B9B9B] rounded-[4px] resize-none 
                     outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
                     rows="3"
                     placeholder="This is a textarea placeholder"
                   ></textarea>
                 </div>
                 <div className="w-full flex flex-col">
-                  {/*  <Select
-                    radius="sm"
-                    size="lg"
-                    placeholder="Select an area"
-                    defaultSelectedKeys={["Outside of Dhaka"]}
-                    variant="bordered"
-                    className="roundedlg"
-                  >
-                    <SelectItem
-                      key={"Outside of Dhaka"}
-                      value={"Outside of Dhaka"}
-                    >
-                      Outside of Dhaka
-                    </SelectItem>
-                    <SelectItem
-                      key={"Inside of Dhaka"}
-                      value={"Inside of Dhaka"}
-                    >
-                      Inside of Dhaka
-                    </SelectItem>
-                  </Select> */}
                   <select
                     defaultValue={"Outside of Dhaka"}
-                    className="py-4 px-2 rounded-[4px] border w-full text-base lg:text-lg duration-300 align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
+                    className="py-4 px-2 rounded-[4px] border border-[#9B9B9B] w-full text-base lg:text-lg duration-300 align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
                   >
                     <option value={"Outside of Dhaka"}>Outside of Dhaka</option>
                     <option value={"Inside of Dhaka"}>Inside of Dhaka</option>
@@ -98,7 +77,7 @@ const ProductCheckout = () => {
                     type="text"
                     placeholder="019245*****"
                     autoFocus
-                    className="border mt-1 lg:mt-2 h-14 px-2 rounded-[4px] text-base lg:text-lg duration-300 w-full align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
+                    className="border border-[#9B9B9B] mt-1 lg:mt-2 h-14 px-2 rounded-[4px] text-base lg:text-lg duration-300 w-full align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
                   />
                 </div>
                 <div className="w-full flex flex-col">
@@ -120,6 +99,89 @@ const ProductCheckout = () => {
                 </div>
               </div>
             </form>
+          </div>
+        </div>
+        <div className="m-2 rounded-[4px]">
+          <div className="max-w-[575px] mx-auto w-full border p-6">
+            <div className="max-xsm:space-y-2 max-sm:space-y-4 sm:space-y-6 lg:space-y-12 duration-300 pb-10">
+              <h4 className="text-xl lg:text-2xl font-semibold">
+                Order Overview
+              </h4>
+              <div className="flex flex-col border">
+                <div className="-m-1.5 overflow-x-auto">
+                  <div className="p-1.5 min-w-full inline-block align-middle">
+                    <div className="overflow-hidden">
+                      <table className="w-full ">
+                        <thead className="w-full">
+                          <tr className="w-full">
+                            <th
+                              scope="col"
+                              className="px-4 py-6 text-center bg-[#F2F4F8] text-lg lg:text-xl duration-300 font-medium border w-[40%] border-t-0 border-l-0"
+                            >
+                              Product Name
+                            </th>
+                            <th
+                              scope="col"
+                              className="px-4 py-6 text-center bg-[#F2F4F8] text-lg lg:text-xl duration-300 font-medium border  border-t-0"
+                            >
+                              Quantity
+                            </th>
+                            <th
+                              scope="col"
+                              className="px-4 py-6 text-center bg-[#F2F4F8] text-lg lg:text-xl duration-300 font-medium border  border-t-0 border-r-0"
+                            >
+                              Price
+                            </th>
+                          </tr>
+                        </thead>
+                        <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
+                          <tr className="w-full">
+                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 font-medium text-gray-800 dark:text-gray-200 text-wrap">
+                              Havit H2010d-Pro RGB Gaming Headphone{" "}
+                            </td>
+                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200 border-x-1 text-center">
+                              1
+                            </td>
+                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
+                              TK 1790
+                            </td>
+                          </tr>
+
+                          <tr className="w-full">
+                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 font-medium text-gray-800 dark:text-gray-200 border-r-1">
+                              Sub-Total
+                            </td>
+                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200"></td>
+                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
+                              TK 1790
+                            </td>
+                          </tr>
+
+                          <tr className="w-full">
+                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 font-medium text-gray-800 dark:text-gray-200 border-r-1">
+                              Delivery Cost
+                            </td>
+                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200"></td>
+                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
+                              TK 120
+                            </td>
+                          </tr>
+                          <tr className="w-full">
+                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 font-medium text-gray-800 dark:text-gray-200 border-r-1">
+                              Total
+                            </td>
+                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200"></td>
+                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
+                              TK 1910
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
