@@ -4,7 +4,7 @@ import Footer from "../components/ui/Footer";
 
 const Root = () => {
   return (
-    <div className="overflow-x-hidden bg-[#F8F9FA]">
+    <div className="overflow-x-hidden ">
       <Navbar />
       <Outlet></Outlet>
       <Footer />

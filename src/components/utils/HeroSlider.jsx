@@ -18,63 +18,63 @@ const HeroSlider = () => {
       >
         <SwiperSlide className="rounded-lg">
           <img
-            className="rounded-lg max-h-96 max-w-7xl"
+            className="rounded-lg max-h-96 max-w-[1175px]"
             src={sliderImg}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide className="rounded-lg">
           <img
-            className="rounded-lg max-h-96 max-w-7xl"
+            className="rounded-lg max-h-96 max-w-[1175px]"
             src={sliderImg}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide className="rounded-lg">
           <img
-            className="rounded-lg max-h-96 max-w-7xl"
+            className="rounded-lg max-h-96 max-w-[1175px]"
             src={sliderImg}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide className="rounded-lg">
           <img
-            className="rounded-lg max-h-96 max-w-7xl"
+            className="rounded-lg max-h-96 max-w-[1175px]"
             src={sliderImg}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide className="rounded-lg">
           <img
-            className="rounded-lg max-h-96 max-w-7xl"
+            className="rounded-lg max-h-96 max-w-[1175px]"
             src={sliderImg}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide className="rounded-lg">
           <img
-            className="rounded-lg max-h-96 max-w-7xl"
+            className="rounded-lg max-h-96 max-w-[1175px]"
             src={sliderImg}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide className="rounded-lg">
           <img
-            className="rounded-lg max-h-96 max-w-7xl"
+            className="rounded-lg max-h-96 max-w-[1175px]"
             src={sliderImg}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide className="rounded-lg">
           <img
-            className="rounded-lg max-h-96 max-w-7xl"
+            className="rounded-lg max-h-96 max-w-[1175px]"
             src={sliderImg}
             alt=""
           />
         </SwiperSlide>
         <SwiperSlide className="rounded-lg">
           <img
-            className="rounded-lg max-h-96 max-w-7xl"
+            className="rounded-lg max-h-96 max-w-[1175px]"
             src={sliderImg}
             alt=""
           />

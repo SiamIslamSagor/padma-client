@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div>
       <div className="bg-primary-color text-white">
-        <div className="container max-w-7xl mx-auto py-20 flex  justify-between gap-2 lg:gap-8  flex-wrap px-5">
+        <div className="container max-w-[1175px] mx-auto py-20 flex  justify-between gap-2 lg:gap-8  flex-wrap max-xl:px-5">
           <div className="space-y-5 flex-1 max-sm:min-w-[320px] max-w-[425px]">
             <h3 className="text-2xl sm:text-3xl text-white font-semibold">
               PADMA

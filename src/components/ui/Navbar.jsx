@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <>
       <div className="z-[100] shadow-xl bg-primary-color min-h-10 fixed  w-full">
-        <div className="container max-w-7xl mx-auto flex justify-between items-center px-5 py-5 ">
+        <div className="container max-w-[1175px] mx-auto flex justify-between items-center max-xl:px-5 py-5 ">
           <div className="max-sm:mr-5 max-lg:mr-10 lg:mr-20 xl:mr-28 2xl:mr-36 ">
             <Logo />
           </div>
