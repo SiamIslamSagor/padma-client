@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import { Button } from "@nextui-org/react";
 import { MdAdd } from "react-icons/md";
 import { Link } from "react-router-dom";
+import { useCallback, useEffect, useState } from "react";
 
 const ProductSlider = ({ singleCategoryProducts }) => {
   const pagination = {
@@ -15,6 +16,28 @@ const ProductSlider = ({ singleCategoryProducts }) => {
       return '<span class="' + className + '">' + (index + 1) + "</span>";
     },
   };
+  const [slidesItem, setSlidesItem] = useState(2);
+  const handleResize = useCallback(() => {
+    const width = window.innerWidth;
+
+    if (width >= 1024) {
+      setSlidesItem(4);
+    } else if (width >= 768) {
+      setSlidesItem(3);
+    } else if (width < 768) {
+      setSlidesItem(2);
+    }
+  }, []);
+
+  // side effect
+  useEffect(() => {
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [handleResize]);
   return (
     <div>
       <h3 className="text-lg mt-3 lg:mt-5 md:text-xl font-semibold lg:text-2xl">
@@ -37,7 +60,7 @@ const ProductSlider = ({ singleCategoryProducts }) => {
         }}
         navigation={true}
         pagination={pagination}
-        slidesPerGroup={4}
+        slidesPerGroup={slidesItem}
         modules={[Pagination, Navigation]}
         className="mySwiper my-5"
         key={singleCategoryProducts?.category + 5}
@@ -47,7 +70,12 @@ const ProductSlider = ({ singleCategoryProducts }) => {
             className="select-none border "
             key={product.images[0] + idx}
           >
-            <Link to={`/product-details/${product?.title}`}>
+            <Link
+              to={`/product-details/${
+                product["product-id"] ? product["product-id"] : "unknown-id"
+              }`}
+            >
+              {/* <Link to={`/product-details/${product?.title}`}> */}
               <div className="cursor-pointer active:scale-95 duration-500">
                 <div>
                   <img
