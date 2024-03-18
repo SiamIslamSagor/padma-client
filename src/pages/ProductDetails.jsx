@@ -1,7 +1,7 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Button, ButtonGroup } from "@nextui-org/react";
 import { useEffect, useState } from "react";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
+import useAxiosPublic from "../hooks/useAxiosPublic";
 
 const ProductDetails = () => {
   const params = useParams();
@@ -22,7 +22,8 @@ const ProductDetails = () => {
           console.log(err);
         });
     }
-  }, [params.id, axiosPublic]);
+  }, [params?.id, axiosPublic]);
+  console.log(singleProductDetails);
 
   return (
     <div className="container max-w-[1175px] mx-auto max-xl:px-5 ">
@@ -107,12 +108,16 @@ const ProductDetails = () => {
                       +
                     </Button>
                   </ButtonGroup>
-                  <Button
-                    radius="none"
-                    className="py-6 md:py-8 w-full bg-primary-color text-xl md:text-2xl  text-white font-semibold"
+                  <Link
+                    to={`/product-checkout/${singleProductDetails["product-id"]}+qun${productQuantity}`}
                   >
-                    By Now
-                  </Button>
+                    <Button
+                      radius="none"
+                      className="py-6 md:py-8 w-full bg-primary-color text-xl md:text-2xl  text-white font-semibold"
+                    >
+                      By Now
+                    </Button>
+                  </Link>
                   <Button
                     radius="none"
                     className="py-6 md:py-8 w-full bg-secondary-color text-xl md:text-2xl   font-semibold"
