@@ -13,7 +13,7 @@
           "https://i.ibb.co/XLZ5yjt/product1.jpg"
         ],
         "description": "High-quality wireless earphones with Bluetooth connectivity.",
-        "available-quantity": 100,
+        "availableQuantity": 100,
         "isSold": false,
         "product-id": "a2b9d8e7f6c5b4a3e2d1c0b9"
       },
@@ -28,7 +28,7 @@
           "https://i.ibb.co/WpVvPD1/product2.jpg"
         ],
         "description": "Compact power bank with fast charging capability.",
-        "available-quantity": 80,
+        "availableQuantity": 80,
         "isSold": false,
         "product-id": "b4c5d6e7f8a9b0c1d2e3f4a5"
       },
@@ -43,7 +43,7 @@
           "https://i.ibb.co/VjMjspZ/product3.jpg"
         ],
         "description": "Adjustable and portable laptop stand for ergonomic usage.",
-        "available-quantity": 120,
+        "availableQuantity": 120,
         "isSold": false,
         "product-id": "d6e7f8a9b0c1d2e3f4a5b6c7"
       },
@@ -58,7 +58,7 @@
           "https://i.ibb.co/Cmv4vgc/product4.jpg"
         ],
         "description": "Durable and waterproof backpack specifically designed for DSLR cameras.",
-        "available-quantity": 50,
+        "availableQuantity": 50,
         "isSold": false,
         "product-id": "a1b2c3d4e5f6a2b3c4d5e6f7"
       },
@@ -73,7 +73,7 @@
           "https://i.ibb.co/XLZ5yjt/product1.jpg"
         ],
         "description": "3-axis smartphone gimbal stabilizer for smooth video recording.",
-        "available-quantity": 60,
+        "availableQuantity": 60,
         "isSold": false,
         "product-id": "c5d6e7f8a9b0c1d2e3f4a5b6"
       },
@@ -88,7 +88,7 @@
           "https://i.ibb.co/WpVvPD1/product2.jpg"
         ],
         "description": "Portable Bluetooth speaker with high-quality sound output.",
-        "available-quantity": 90,
+        "availableQuantity": 90,
         "isSold": false,
         "product-id": "d7e8f9a0b1c2d3e4f5a6b7c8"
       },
@@ -103,7 +103,7 @@
           "https://i.ibb.co/VjMjspZ/product3.jpg"
         ],
         "description": "Smartwatch with fitness tracking features including heart rate monitoring and step counting.",
-        "available-quantity": 40,
+        "availableQuantity": 40,
         "isSold": false,
         "product-id": "e9a0b1c2d3e4f5a6b7c8d9e0"
       },
@@ -118,7 +118,7 @@
           "https://i.ibb.co/Cmv4vgc/product4.jpg"
         ],
         "description": "High-quality digital camera with compact design and multiple shooting modes.",
-        "available-quantity": 70,
+        "availableQuantity": 70,
         "isSold": false,
         "product-id": "a2b3c4d5e6f7a3b4c5d6e7f"
       },
@@ -133,7 +133,7 @@
           "https://i.ibb.co/XLZ5yjt/product1.jpg"
         ],
         "description": "Portable and foldable keyboard compatible with smartphones and tablets.",
-        "available-quantity": 110,
+        "availableQuantity": 110,
         "isSold": false,
         "product-id": "c7d8e9a0b1c2d3e4f5a6b7c"
       },
@@ -148,7 +148,7 @@
           "https://i.ibb.co/WpVvPD1/product2.jpg"
         ],
         "description": "Compact binoculars with high magnification power and lightweight design.",
-        "available-quantity": 85,
+        "availableQuantity": 85,
         "isSold": false,
         "product-id": "d8e9a0b1c2d3e4f5a6b7c8d9"
       }

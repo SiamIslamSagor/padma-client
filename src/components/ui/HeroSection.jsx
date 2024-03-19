@@ -1,5 +1,6 @@
-import HeroSlider from "../utils/HeroSlider";
+// import HeroSlider from "../utils/HeroSlider";
 import heroImg2 from "../../assets/heroImg2.jpeg";
+import HeroSlider from "../utils/HeroSlider";
 
 const HeroSection = () => {
   return (

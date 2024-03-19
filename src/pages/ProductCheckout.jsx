@@ -47,9 +47,9 @@ const ProductCheckout = () => {
 
   return (
     <div className="container max-w-[1175px] mx-auto max-xl:px-5 ">
-      <div className="my-24 max-lg:space-y-10 lg:flex ">
-        <div className="m-2 rounded-[4px]">
-          <div className="max-w-[575px] mx-auto w-full border p-6">
+      <div className="my-24 max-lg:space-y-10 lg:flex justify-between ">
+        <div className="my-2 rounded-[4px]">
+          <div className="max-w-[575px] mx-auto w-full md:border md:p-6">
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="max-xsm:space-y-2 max-sm:space-y-4 sm:space-y-6 duration-300">
                 <h4 className="text-xl lg:text-2xl font-semibold">
@@ -69,7 +69,7 @@ const ProductCheckout = () => {
                       required: "Name is required *",
                     })}
                     aria-invalid={errors.name ? "true" : "false"}
-                    className="border border-[#9B9B9B] mt-1 lg:mt-2 h-14 px-2 rounded-[4px] text-base lg:text-lg duration-300 w-full align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
+                    className="border border-[#9B9B9B] focus:ring-1 focus:ring-primary-color mt-1 lg:mt-2 h-14 px-2 rounded-[4px] text-base lg:text-lg duration-300 w-full align-middle outline-transparent  focus:outline-none active:ring-0 active:outline-none"
                   />
                   {errors.name && (
                     <p className="text-sm text-red-600 mt-1">
@@ -127,7 +127,7 @@ const ProductCheckout = () => {
                       maxLength: 11,
                     })}
                     aria-invalid={errors.email ? "true" : "false"}
-                    className="border border-[#9B9B9B] mt-1 lg:mt-2 h-14 px-2 rounded-[4px] text-base lg:text-lg duration-300 w-full align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
+                    className="border border-[#9B9B9B] focus:ring-1 focus:ring-primary-color mt-1 lg:mt-2 h-14 px-2 rounded-[4px] text-base lg:text-lg duration-300 w-full align-middle outline-transparent focus:outline-none active:ring-0 active:outline-none"
                   />
                   {errors.number?.type === "required" && (
                     <p className="text-sm text-red-600 mt-1">
@@ -163,8 +163,8 @@ const ProductCheckout = () => {
             </form>
           </div>
         </div>
-        <div className="m-2 rounded-[4px]">
-          <div className="max-w-[575px] mx-auto w-full border p-6">
+        <div className="my-2 rounded-[4px]">
+          <div className="max-w-[575px] mx-auto w-full md:border md:p-6">
             <div className="max-xsm:space-y-2 max-sm:space-y-4 sm:space-y-6 lg:space-y-12 duration-300 pb-10">
               <h4 className="text-xl lg:text-2xl font-semibold">
                 Order Overview
@@ -178,19 +178,19 @@ const ProductCheckout = () => {
                           <tr className="w-full">
                             <th
                               scope="col"
-                              className="px-4 py-6 text-center bg-[#F2F4F8] text-lg lg:text-xl duration-300 font-medium border w-[40%] border-t-0 border-l-0"
+                              className="px-2 md:px-4 py-6 text-start bg-[#F2F4F8] text-lg lg:text-xl duration-300 font-medium border w-[40%] border-t-0 border-l-0"
                             >
                               Product Name
                             </th>
                             <th
                               scope="col"
-                              className="px-4 py-6 text-center bg-[#F2F4F8] text-lg lg:text-xl duration-300 font-medium border  border-t-0"
+                              className="px-2 md:px-4 py-6 text-center bg-[#F2F4F8] text-lg lg:text-xl duration-300 font-medium border  border-t-0"
                             >
                               Quantity
                             </th>
                             <th
                               scope="col"
-                              className="px-4 py-6 text-center bg-[#F2F4F8] text-lg lg:text-xl duration-300 font-medium border  border-t-0 border-r-0"
+                              className="px-2 md:px-4 py-6 text-center bg-[#F2F4F8] text-lg lg:text-xl duration-300 font-medium border  border-t-0 border-r-0"
                             >
                               Price
                             </th>
@@ -198,42 +198,42 @@ const ProductCheckout = () => {
                         </thead>
                         <tbody className="divide-y divide-gray-200 dark:divide-gray-700">
                           <tr className="w-full">
-                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 font-medium text-gray-800 dark:text-gray-200 text-wrap">
+                            <td className="px-2 md:px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 font-medium text-gray-800 dark:text-gray-200 text-wrap">
                               Havit H2010d-Pro RGB Gaming Headphone{" "}
                             </td>
-                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200 border-x-1 text-center">
+                            <td className="px-2 md:px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200 border-x-1 text-center">
                               1
                             </td>
-                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
+                            <td className="px-2 md:px-4 text-center py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
                               TK 1790
                             </td>
                           </tr>
 
                           <tr className="w-full">
-                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 font-medium text-gray-800 dark:text-gray-200 border-r-1">
+                            <td className="px-2 md:px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 font-medium text-gray-800 dark:text-gray-200 border-r-1">
                               Sub-Total
                             </td>
-                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200"></td>
-                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
+                            <td className="px-2 md:px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200"></td>
+                            <td className="px-2 md:px-4 text-center py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
                               TK 1790
                             </td>
                           </tr>
 
                           <tr className="w-full">
-                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 font-medium text-gray-800 dark:text-gray-200 border-r-1">
+                            <td className="px-2 md:px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 font-medium text-gray-800 dark:text-gray-200 border-r-1">
                               Delivery Cost
                             </td>
-                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200"></td>
-                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
+                            <td className="px-2 md:px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200"></td>
+                            <td className="px-2 md:px-4 text-center py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
                               TK 120
                             </td>
                           </tr>
                           <tr className="w-full">
-                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 font-medium text-gray-800 dark:text-gray-200 border-r-1">
+                            <td className="px-2 md:px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 font-medium text-gray-800 dark:text-gray-200 border-r-1">
                               Total
                             </td>
-                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200"></td>
-                            <td className="px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
+                            <td className="px-2 md:px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200"></td>
+                            <td className="px-2 md:px-4 text-center py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
                               TK 1910
                             </td>
                           </tr>

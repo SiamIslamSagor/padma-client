@@ -29,9 +29,9 @@ const ProductDetails = () => {
     <div className="container max-w-[1175px] mx-auto max-xl:px-5 ">
       {singleProductDetails?.title && (
         <div>
-          <div className="my-10 xsm:space-y-28 sm:space-y-28 md:space-y-36 lg:space-y-0 lg:flex justify-between items-center gap-6">
+          <div className="my-10 xsm:space-y-28 md:space-y-28 md:flex justify-between items-center gap-6">
             <div className=" ">
-              <div className="max-w-[575px] max-h-[550px] max-lg:mx-auto">
+              <div className="max-w-[575px] max-h-[550px]">
                 <div>
                   <img
                     className="w-full max-xsm:max-h-96 xsm:max-h-[520px] object-cover border duration-300"
@@ -39,7 +39,7 @@ const ProductDetails = () => {
                     alt=""
                   />
                 </div>
-                <div className="flex gap-2 my-5 max-lg:justify-center">
+                <div className="flex gap-2 my-5 ">
                   {singleProductDetails?.images.map((img, idx) => (
                     <img
                       className={`size-16 xsm:size-20 md:size-24 lg:size-32 duration-300 object-cover border cursor-pointer`}
@@ -56,7 +56,7 @@ const ProductDetails = () => {
               </div>
             </div>
             <div className=" lg:pb-10">
-              <div className="mt-2.5 space-y-2.5 max-lg:text-center">
+              <div className="mt-2.5 space-y-2.5">
                 <h3 className="text-2xl md:text-3xl font-bold truncate">
                   {singleProductDetails.title}
                 </h3>
@@ -81,7 +81,7 @@ const ProductDetails = () => {
                   Available Products :{" "}
                   {singleProductDetails["availableQuantity"]}
                 </p>
-                <div className="max-lg:mx-auto max-w-[575px] lg:pt-28 space-y-3 xsm:space-y-4 md:space-y-5">
+                <div className="max-w-[575px] lg:pt-28 space-y-3 xsm:space-y-4 md:space-y-5">
                   <ButtonGroup radius="none" className="pb-5">
                     <Button
                       onClick={() =>
@@ -132,7 +132,7 @@ const ProductDetails = () => {
             </div>
           </div>
           <div>
-            <div className="max-lg:my-10 lg:my-40 p-5 md:p-8 lg:p-10 bg-[#F4F4F4]">
+            <div className="max-md:my-10 md:my-32 lg:my-40 p-5 md:p-8 lg:p-10 bg-[#F4F4F4]">
               <h4 className="text-xl md:text-2xl font-medium">Description</h4>
               <p className="text-base md:text-lg">
                 {singleProductDetails?.description}

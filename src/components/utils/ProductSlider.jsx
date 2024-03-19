@@ -59,7 +59,7 @@ const ProductSlider = ({ singleCategoryProducts }) => {
           },
         }}
         navigation={true}
-        pagination={pagination}
+        // pagination={pagination}
         slidesPerGroup={slidesItem}
         modules={[Pagination, Navigation]}
         className="mySwiper my-5"
