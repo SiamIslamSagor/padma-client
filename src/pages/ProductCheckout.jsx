@@ -1,17 +1,22 @@
 import { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { useState } from "react";
 import { Button, Checkbox } from "@nextui-org/react";
 import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
 
 const ProductCheckout = () => {
   const params = useParams();
   const axiosPublic = useAxiosPublic();
   const [singleProductDetails, setSingleProductDetails] = useState({});
   const productQuantity = params?.id.split("+qun")[1] / 1;
-  // console.log(singleProductDetails.title, productQuantity);
-
+  const [subtotal, setSubtotal] = useState(0);
+  // console.log(singleProductDetails);
+  const [area, setArea] = useState("Outside Dhaka");
+  const [deliveryCost, setDeliveryCost] = useState(200);
+  const navigate = useNavigate();
+  console.log(deliveryCost);
   // load product
   useEffect(() => {
     if (params?.id) {
@@ -19,12 +24,21 @@ const ProductCheckout = () => {
         .get(`/get-single-product-details/${params?.id.split("+qun")[0]}`)
         .then(res => {
           setSingleProductDetails(res?.data);
+          if (res?.data["discount-price"]) {
+            let calculatedSubtotal =
+              productQuantity * res?.data["discount-price"];
+            setSubtotal(calculatedSubtotal);
+          } else if (res?.data["regular-price"]) {
+            let calculatedSubtotal =
+              productQuantity * res?.data["regular-price"];
+            setSubtotal(calculatedSubtotal);
+          }
         })
         .catch(err => {
           console.log(err);
         });
     }
-  }, [params?.id, axiosPublic]);
+  }, [params?.id, axiosPublic, productQuantity]);
 
   const {
     register,
@@ -43,6 +57,15 @@ const ProductCheckout = () => {
       PhoneNumber: number,
     };
     console.log(submittedData);
+    Swal.fire({
+      title: "Order was successful.",
+      text: "We have received your order, please be patient, we will deliver your order to you very soon!",
+      icon: "success",
+      iconColor: "#0A6EBD",
+      timer: 3000,
+    });
+    navigate("/");
+    reset();
   };
 
   return (
@@ -91,7 +114,7 @@ const ProductCheckout = () => {
                       required: "Address is required *",
                     })}
                     aria-invalid={errors.address ? "true" : "false"}
-                    placeholder="This is a textarea placeholder"
+                    placeholder="19, Dilkusha C/a, Dhaka"
                   ></textarea>
                   {errors.address && (
                     <p className="text-sm text-red-600 mt-1">
@@ -105,11 +128,24 @@ const ProductCheckout = () => {
                       required: "Area is required *",
                     })}
                     aria-invalid={errors.email ? "true" : "false"}
-                    defaultValue={"Outside of Dhaka"}
+                    onChange={e => {
+                      e.preventDefault();
+                      setArea(e.target.value);
+                      if (area === "Inside Dhaka") {
+                        console.log("Inside Dhaka");
+                        // setDeliveryCost(120);
+                        setDeliveryCost(200);
+                      } else if (area === "Outside Dhaka") {
+                        console.log("Outside Dhaka");
+                        setDeliveryCost(120);
+                        // setDeliveryCost(200);
+                      }
+                    }}
+                    defaultValue={"Outside Dhaka"}
                     className="py-4 px-2 rounded-[4px] border border-[#9B9B9B] w-full text-base lg:text-lg duration-300 align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
                   >
-                    <option value={"Outside of Dhaka"}>Outside of Dhaka</option>
-                    <option value={"Inside of Dhaka"}>Inside of Dhaka</option>
+                    <option value={"Outside Dhaka"}>Outside Dhaka</option>
+                    <option value={"Inside Dhaka"}>Inside Dhaka</option>
                   </select>
                 </div>
                 <div className="w-full flex flex-col">
@@ -202,10 +238,13 @@ const ProductCheckout = () => {
                               Havit H2010d-Pro RGB Gaming Headphone{" "}
                             </td>
                             <td className="px-2 md:px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200 border-x-1 text-center">
-                              1
+                              {productQuantity}
                             </td>
                             <td className="px-2 md:px-4 text-center py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
-                              TK 1790
+                              TK{" "}
+                              {singleProductDetails["discount-price"]
+                                ? singleProductDetails["discount-price"]
+                                : singleProductDetails["regular-price"]}
                             </td>
                           </tr>
 
@@ -215,7 +254,7 @@ const ProductCheckout = () => {
                             </td>
                             <td className="px-2 md:px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200"></td>
                             <td className="px-2 md:px-4 text-center py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
-                              TK 1790
+                              TK {subtotal}
                             </td>
                           </tr>
 
@@ -225,7 +264,7 @@ const ProductCheckout = () => {
                             </td>
                             <td className="px-2 md:px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200"></td>
                             <td className="px-2 md:px-4 text-center py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
-                              TK 120
+                              TK {deliveryCost}
                             </td>
                           </tr>
                           <tr className="w-full">
@@ -234,7 +273,10 @@ const ProductCheckout = () => {
                             </td>
                             <td className="px-2 md:px-4 py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200"></td>
                             <td className="px-2 md:px-4 text-center py-4 whitespace-nowrap text-base lg:text-lg duration-300 text-gray-800 dark:text-gray-200">
-                              TK 1910
+                              TK{" "}
+                              {subtotal && deliveryCost
+                                ? subtotal + deliveryCost
+                                : 0}
                             </td>
                           </tr>
                         </tbody>
