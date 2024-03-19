@@ -3,13 +3,16 @@ import { useParams } from "react-router-dom";
 import useAxiosPublic from "../hooks/useAxiosPublic";
 import { useState } from "react";
 import { Button, Checkbox } from "@nextui-org/react";
+import { useForm } from "react-hook-form";
 
 const ProductCheckout = () => {
   const params = useParams();
   const axiosPublic = useAxiosPublic();
   const [singleProductDetails, setSingleProductDetails] = useState({});
   const productQuantity = params?.id.split("+qun")[1] / 1;
-  console.log(singleProductDetails.title, productQuantity);
+  // console.log(singleProductDetails.title, productQuantity);
+
+  // load product
   useEffect(() => {
     if (params?.id) {
       axiosPublic
@@ -22,12 +25,32 @@ const ProductCheckout = () => {
         });
     }
   }, [params?.id, axiosPublic]);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm();
+
+  const onSubmit = data => {
+    const { name, address, area, number } = data;
+    let userAddress = address.replace(/\n/g, "");
+    let submittedData = {
+      userName: name,
+      userAddress,
+      locationArea: area,
+      PhoneNumber: number,
+    };
+    console.log(submittedData);
+  };
+
   return (
     <div className="container max-w-[1175px] mx-auto max-xl:px-5 ">
       <div className="my-24 max-lg:space-y-10 lg:flex ">
         <div className="m-2 rounded-[4px]">
           <div className="max-w-[575px] mx-auto w-full border p-6">
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)}>
               <div className="max-xsm:space-y-2 max-sm:space-y-4 sm:space-y-6 duration-300">
                 <h4 className="text-xl lg:text-2xl font-semibold">
                   Customer Information
@@ -42,8 +65,17 @@ const ProductCheckout = () => {
                     type="text"
                     placeholder="Md Rocky"
                     autoFocus={true}
+                    {...register("name", {
+                      required: "Name is required *",
+                    })}
+                    aria-invalid={errors.name ? "true" : "false"}
                     className="border border-[#9B9B9B] mt-1 lg:mt-2 h-14 px-2 rounded-[4px] text-base lg:text-lg duration-300 w-full align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
                   />
+                  {errors.name && (
+                    <p className="text-sm text-red-600 mt-1">
+                      {errors.name?.message}
+                    </p>
+                  )}
                 </div>
                 <div className="w-full flex flex-col">
                   <label className="label">
@@ -55,11 +87,24 @@ const ProductCheckout = () => {
                     className="mt-1 lg:mt-2 py-3 px-4 block w-full border border-[#9B9B9B] rounded-[4px] resize-none 
                     outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
                     rows="3"
+                    {...register("address", {
+                      required: "Address is required *",
+                    })}
+                    aria-invalid={errors.address ? "true" : "false"}
                     placeholder="This is a textarea placeholder"
                   ></textarea>
+                  {errors.address && (
+                    <p className="text-sm text-red-600 mt-1">
+                      {errors.address?.message}
+                    </p>
+                  )}
                 </div>
                 <div className="w-full flex flex-col">
                   <select
+                    {...register("area", {
+                      required: "Area is required *",
+                    })}
+                    aria-invalid={errors.email ? "true" : "false"}
                     defaultValue={"Outside of Dhaka"}
                     className="py-4 px-2 rounded-[4px] border border-[#9B9B9B] w-full text-base lg:text-lg duration-300 align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
                   >
@@ -74,25 +119,43 @@ const ProductCheckout = () => {
                     </span>
                   </label>
                   <input
-                    type="text"
+                    type="number"
                     placeholder="019245*****"
+                    {...register("number", {
+                      required: true,
+                      minLength: 11,
+                      maxLength: 11,
+                    })}
+                    aria-invalid={errors.email ? "true" : "false"}
                     className="border border-[#9B9B9B] mt-1 lg:mt-2 h-14 px-2 rounded-[4px] text-base lg:text-lg duration-300 w-full align-middle outline-transparent focus:ring-0 focus:outline-none active:ring-0 active:outline-none"
                   />
+                  {errors.number?.type === "required" && (
+                    <p className="text-sm text-red-600 mt-1">
+                      Phone Number is required *
+                    </p>
+                  )}
+                  {errors.number?.type === "minLength" && (
+                    <p className="text-sm text-red-600 mt-1">
+                      Phone Number must be 11 characters *
+                    </p>
+                  )}
+                  {errors.number?.type === "maxLength" && (
+                    <p className="text-sm text-red-600 mt-1">
+                      Phone Number must be 11 characters *
+                    </p>
+                  )}
                 </div>
                 <div className="w-full flex flex-col">
-                  <Checkbox
-                    isRequired={true}
-                    var
-                    radius="none"
-                    size="sm"
-                    defaultSelected
-                  >
+                  <Checkbox isRequired={true} radius="none" size="sm">
                     I accept terms & conditions and return policy of PADMA
                     Ecommerce.
                   </Checkbox>
                 </div>
                 <div>
-                  <Button className="w-full bg-primary-color text-white font-semibold rounded-[4px]">
+                  <Button
+                    type="submit"
+                    className="w-full bg-primary-color text-white font-semibold rounded-[4px]"
+                  >
                     Place Order
                   </Button>
                 </div>

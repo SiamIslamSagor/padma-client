@@ -79,6 +79,7 @@ const ProductSlider = ({ singleCategoryProducts }) => {
               <div className="cursor-pointer active:scale-95 duration-500">
                 <div>
                   <img
+                    loading="lazy"
                     className="duration-300 shadow-sm select-none max-xsm:!h-[180px] max-sm:!h-[280px] sm:!h-[300px]"
                     src={product.images[0]}
                     alt={product.description}
