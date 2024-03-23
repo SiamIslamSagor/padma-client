@@ -3,6 +3,9 @@ import Root from "../layout/Root";
 import Home from "../pages/Home";
 import ProductDetails from "../pages/ProductDetails";
 import ProductCheckout from "../pages/ProductCheckout";
+import AuthPage from "../layout/AuthPage";
+import SignIn from "../pages/SignIn";
+import SignUp from "../pages/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +33,14 @@ const router = createBrowserRouter([
       {
         path: "/product-checkout/:id",
         element: <ProductCheckout />,
+      },
+      {
+        path: "/sign-in",
+        element: <SignIn></SignIn>,
+      },
+      {
+        path: "/sign-up",
+        element: <SignUp></SignUp>,
       },
     ],
   },

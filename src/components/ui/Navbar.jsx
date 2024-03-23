@@ -3,6 +3,7 @@ import { LuSearch } from "react-icons/lu";
 import { FaHeart, FaShoppingCart, FaUser } from "react-icons/fa";
 import { cn } from "../../utils/cn";
 import { Badge, Button } from "@nextui-org/react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -30,10 +31,14 @@ const Navbar = () => {
             )}
           >
             <div className="px-2 flex items-center justify-center ">
-              <FaUser className="mx-2" /> Sign In
+              <Link className="flex items-center" to={"sign-in"}>
+                <FaUser className="mx-2" /> Sign In
+              </Link>
             </div>
             <div className="px-2 flex items-center justify-center">
-              <p>Register</p>
+              <Link to={"sign-up"}>
+                <p>Register</p>
+              </Link>
             </div>
           </div>
           <div
