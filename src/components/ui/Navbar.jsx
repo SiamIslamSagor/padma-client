@@ -31,12 +31,12 @@ const Navbar = () => {
             )}
           >
             <div className="px-2 flex items-center justify-center ">
-              <Link className="flex items-center" to={"sign-in"}>
+              <Link className="flex items-center" to={"auth/sign-in"}>
                 <FaUser className="mx-2" /> Sign In
               </Link>
             </div>
             <div className="px-2 flex items-center justify-center">
-              <Link to={"sign-up"}>
+              <Link to={"auth/sign-up"}>
                 <p>Register</p>
               </Link>
             </div>

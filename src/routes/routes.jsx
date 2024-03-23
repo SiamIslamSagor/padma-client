@@ -3,9 +3,7 @@ import Root from "../layout/Root";
 import Home from "../pages/Home";
 import ProductDetails from "../pages/ProductDetails";
 import ProductCheckout from "../pages/ProductCheckout";
-import AuthPage from "../layout/AuthPage";
-import SignIn from "../pages/SignIn";
-import SignUp from "../pages/SignUp";
+import AuthPage from "../components/utils/AuthPage";
 
 const router = createBrowserRouter([
   {
@@ -35,12 +33,8 @@ const router = createBrowserRouter([
         element: <ProductCheckout />,
       },
       {
-        path: "/sign-in",
-        element: <SignIn></SignIn>,
-      },
-      {
-        path: "/sign-up",
-        element: <SignUp></SignUp>,
+        path: "/auth/:page",
+        element: <AuthPage />,
       },
     ],
   },
